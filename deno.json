@@ -1,0 +1,12 @@
+{
+  "tasks": {
+    "scaffold": {
+      "description": "Scaffold a new AOC template",
+      "command": "deno run -A ./scaffold.ts"
+    },
+    "format": {
+      "description": "Format all files",
+      "command": "deno fmt"
+    }
+  }
+}

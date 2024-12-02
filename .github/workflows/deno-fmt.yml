@@ -24,7 +24,7 @@ jobs:
 
       # Run deno fmt and check for changes
       - name: Format Code
-        run: deno fmt
+        run: deno task format
 
       # Commit changes if any
       - name: Commit changes
