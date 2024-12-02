@@ -25,7 +25,8 @@ This will fetch the input for that day, and create the files for solving the
 problem. It will also provide a link to the problem on the Advent of Code
 website.
 
-If you want to fetch from a specific day or year, you can do that the following way:
+If you want to fetch from a specific day or year, you can do that the following
+way:
 
 ```bash
 deno task scaffold --day=2 --year=2024
