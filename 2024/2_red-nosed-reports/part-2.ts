@@ -14,21 +14,22 @@ const isSafe = (report: number[]) => {
   const jumps = report
     .map((value, index) => report[index + 1] - value)
     .slice(0, -1);
-  const jumpIsSafe = jumps.every(
+  const jumpsAreSafe = jumps.every(
     (jump) => Math.abs(jump) >= 1 && Math.abs(jump) <= 3,
   );
 
-  console.log(report.join(","), sorted, jumpIsSafe);
-
   // Return if the report is safe
-  return sorted && jumpIsSafe;
+  return sorted && jumpsAreSafe;
 };
 
 // Loop over each report
-const safe = reports.reduce(
-  (total, report) => (isSafe(report) ? total + 1 : total),
-  0,
-);
+const safe = reports.reduce((total, report) => {
+  const hasSafeVariants = report.some((_, index) => {
+    const variant = report.filter((_, i) => i !== index);
+    return isSafe(variant);
+  });
+  return hasSafeVariants ? total + 1 : total;
+}, 0);
 
 // Print the result
 console.log("Safe: ", safe);

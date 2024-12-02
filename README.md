@@ -8,9 +8,10 @@ _Started December 1st, 2024_
 
 - Each year has its own folder, which is further split up into days.
 - Each day will be formatted `day-number_task-name`.
-- If multiple parts exist, they will have their own folder too.
+- Input will always be `input.txt`.
 
 ## Links
 
 - [Advent of Code](https://adventofcode.com/).
-- [Solve AoC with Deno for rewards](https://deno.com/blog/advent-of-code-2024) (2024).
+- [Solve AoC with Deno for rewards](https://deno.com/blog/advent-of-code-2024)
+  (2024).
