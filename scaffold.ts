@@ -66,7 +66,7 @@ const input = await inputRes.text();
 // Extract the task title from the day info
 function extractTaskTitle(html: string): string | null {
   const match = html.match(/<h2>--- Day \d+: (.+) ---<\/h2>/);
-  return match ? match[1].toLowerCase().replace(/\s+/g, "-") : null;
+  return match ? match[1].toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "") : null;
 }
 
 // Check if the task title was extracted
