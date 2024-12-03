@@ -98,8 +98,14 @@ await Deno.mkdir(folder, { recursive: true });
 Deno.writeTextFile(`${folder}/input.txt`, input.trim());
 
 // Create the scaffold files
-Deno.writeTextFile(`${folder}/part-1.ts`, "// Read the input file and split it into lines\nconst input = await Deno.readTextFile(\"./input.txt\");");
-Deno.writeTextFile(`${folder}/part-2.ts`, "// Read the input file and split it into lines\nconst input = await Deno.readTextFile(\"./input.txt\");");
+Deno.writeTextFile(
+  `${folder}/part-1.ts`,
+  '// Read the input file and split it into lines\nconst input = await Deno.readTextFile("./input.txt");',
+);
+Deno.writeTextFile(
+  `${folder}/part-2.ts`,
+  '// Read the input file and split it into lines\nconst input = await Deno.readTextFile("./input.txt");',
+);
 
 // Log the success message
 console.info(`Scaffold created for ${year} day ${day} - ${title}`);
