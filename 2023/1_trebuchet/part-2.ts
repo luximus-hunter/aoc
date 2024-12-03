@@ -29,8 +29,9 @@ const numberToDigit = (numberString: string): string => {
 // Replace number strings with digits
 const lineToDigitArray = (numberString: string): string[] => {
   // Replace number strings with digits
-  let replaced = numberString.replace(stingRegex, (match) =>
-    numberToDigit(match)
+  let replaced = numberString.replace(
+    stingRegex,
+    (match) => numberToDigit(match),
   );
 
   // Replace any remaining number strings with digits
