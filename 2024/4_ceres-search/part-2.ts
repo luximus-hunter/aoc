@@ -25,28 +25,28 @@ const StartLetterIsPartOfTarget = (row: number, col: number): boolean => {
   if (grid.flat().length !== 3 * 3) return false;
 
   // Starting at the top
-  const startsFromTop = grid[0][0] === "M" && // M.M
-    grid[0][2] === "M" && // .A.
-    grid[1][1] === "A" && // S.S
-    grid[2][0] === "S" &&
+  const startsFromTop = grid[0][0] === "M" &&
+    grid[0][2] === "M" && // M.M
+    grid[1][1] === "A" && // .A.
+    grid[2][0] === "S" && // S.S
     grid[2][2] === "S";
   // Starting at the left
-  const startsFromLeft = grid[0][0] === "M" && // M.S
-    grid[0][2] === "S" && // .A.
-    grid[1][1] === "A" && // M.S
-    grid[2][0] === "M" &&
+  const startsFromLeft = grid[0][0] === "M" &&
+    grid[0][2] === "S" && // M.S
+    grid[1][1] === "A" && // .A.
+    grid[2][0] === "M" && // M.S
     grid[2][2] === "S";
   // Starting at the right
-  const startsFromRight = grid[0][0] === "S" && // S.M
-    grid[0][2] === "M" && // .A.
-    grid[1][1] === "A" && // S.M
-    grid[2][0] === "S" &&
+  const startsFromRight = grid[0][0] === "S" &&
+    grid[0][2] === "M" && // S.M
+    grid[1][1] === "A" && // .A.
+    grid[2][0] === "S" && // S.M
     grid[2][2] === "M";
   // Starting at the bottom
-  const startsFromBottom = grid[0][0] === "S" && // S.S
-    grid[0][2] === "S" && // .A.
-    grid[1][1] === "A" && // M.M
-    grid[2][0] === "M" &&
+  const startsFromBottom = grid[0][0] === "S" &&
+    grid[0][2] === "S" && // S.S
+    grid[1][1] === "A" && // .A.
+    grid[2][0] === "M" && // M.M
     grid[2][2] === "M";
 
   // Return if any of the starts are true
