@@ -73,7 +73,7 @@ const StartLetterIsPartOfTarget = (row: number, col: number): number => {
 
   // Get all directions that are part of the target (filter by true)
   const partOfNumberOfTargets = Object.values(isTarget).filter(
-    (value) => value
+    (value) => value,
   );
 
   // Return the amount of directions that are part of the target
@@ -90,7 +90,7 @@ const amountOfTargets = lines.reduce(
         return StartLetterIsPartOfTarget(row, col);
       })
       .reduce((acc, x) => acc + x, 0),
-  0
+  0,
 );
 
 // Print the amount of targets found

@@ -25,29 +25,25 @@ const StartLetterIsPartOfTarget = (row: number, col: number): boolean => {
   if (grid.flat().length !== 3 * 3) return false;
 
   // Starting at the top
-  const startsFromTop =
-    grid[0][0] === "M" && // M.M
+  const startsFromTop = grid[0][0] === "M" && // M.M
     grid[0][2] === "M" && // .A.
     grid[1][1] === "A" && // S.S
     grid[2][0] === "S" &&
     grid[2][2] === "S";
   // Starting at the left
-  const startsFromLeft =
-    grid[0][0] === "M" && // M.S
+  const startsFromLeft = grid[0][0] === "M" && // M.S
     grid[0][2] === "S" && // .A.
     grid[1][1] === "A" && // M.S
     grid[2][0] === "M" &&
     grid[2][2] === "S";
   // Starting at the right
-  const startsFromRight =
-    grid[0][0] === "S" && // S.M
+  const startsFromRight = grid[0][0] === "S" && // S.M
     grid[0][2] === "M" && // .A.
     grid[1][1] === "A" && // S.M
     grid[2][0] === "S" &&
     grid[2][2] === "M";
   // Starting at the bottom
-  const startsFromBottom =
-    grid[0][0] === "S" && // S.S
+  const startsFromBottom = grid[0][0] === "S" && // S.S
     grid[0][2] === "S" && // .A.
     grid[1][1] === "A" && // M.M
     grid[2][0] === "M" &&
@@ -63,9 +59,9 @@ const amountOfTargets = lines.reduce(
     acc +
     line.reduce(
       (acc, _, col) => acc + (StartLetterIsPartOfTarget(row, col) ? 1 : 0),
-      0
+      0,
     ),
-  0
+  0,
 );
 
 // Print the amount of targets found
