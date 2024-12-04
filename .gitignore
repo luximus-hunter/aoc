@@ -6,3 +6,6 @@ node_modules
 
 # Ignore aoc input files
 **/input.txt
+
+# Ignore Lume output generated files
+docs
