@@ -9,7 +9,7 @@ _Started December 1st, 2024_
 - Each year has its own folder, which is further split up into days.
 - Each day will be formatted `day-number_task-name`.
 - The following files will always be present in a problem:
-  - `input.txt`
+  - `input.txt` - This will not be commited.
   - `part-1.ts`
   - `part-2.ts`
 
