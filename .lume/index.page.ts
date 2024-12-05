@@ -4,11 +4,10 @@ export default function* () {
   yield {
     url: `/`,
     layout: "layouts/home.tsx",
-    title: "Advent of Code 2020",
+    title: "Advent of Code Solutions",
     pages: calendars
       .map((calendar) =>
         calendar.days
-          .filter((day) => day.partOne || day.partTwo)
           .map((day) => ({
             year: calendar.year,
             day: day.day,

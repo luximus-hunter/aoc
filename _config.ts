@@ -15,6 +15,12 @@ site.use(
   tailwindcss({
     options: {
       plugins: [typography],
+      theme: {
+        colors: {
+          dark: "#20242c",
+          light: "#eceff4",
+        },
+      },
     },
   })
 );
