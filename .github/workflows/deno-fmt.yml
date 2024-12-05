@@ -1,10 +1,9 @@
-name: Deno Format Check
+name: Deno Format
 
 on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
   format:

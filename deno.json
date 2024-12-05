@@ -1,4 +1,7 @@
 {
+  "imports": {
+    "lume/": "https://deno.land/x/lume@v2.4.2/"
+  },
   "tasks": {
     "scaffold": {
       "description": "Scaffold a new AOC template",
@@ -7,6 +10,27 @@
     "format": {
       "description": "Format all files",
       "command": "deno fmt"
+    },
+    "format:check": {
+      "description": "Check if all files are formatted",
+      "command": "deno fmt --check"
+    },
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "build": "deno task lume",
+    "dev": "deno task lume --watch -s"
+  },
+  "compilerOptions": {
+    "types": ["lume/types.ts"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:preact"
+  },
+  "lint": {
+    "exclude": ["./docs", "**/input.txt"],
+    "rules": {
+      "tags": ["recommended"]
     }
+  },
+  "fmt": {
+    "exclude": ["./docs", "**/input.txt"]
   }
 }
