@@ -5,11 +5,13 @@ type Data = Lume.Data & {
   pages: Pages;
 };
 
+export const layout = "layouts/main.vto";
+
 export default (data: Data, helpers: Lume.Helpers) => {
   console.log(data.pages);
 
   return (
-    <>
+    <div class="prose">
       <h1>{data.title}</h1>
 
       <ul>
@@ -23,6 +25,6 @@ export default (data: Data, helpers: Lume.Helpers) => {
           ))
         )}
       </ul>
-    </>
+    </div>
   );
 };

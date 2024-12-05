@@ -7,9 +7,11 @@ type Data = Lume.Data & {
   partTwoLink?: string;
 };
 
+export const layout = "layouts/main.vto";
+
 export default (data: Data, helpers: Lume.Helpers) => {
   return (
-    <>
+    <div class="prose">
       <h1>{data.title}</h1>
       <a href={data.aocLink}>Advent of Code page</a>
       <a href="/">&larr; Back to the calendar</a>
@@ -31,6 +33,6 @@ export default (data: Data, helpers: Lume.Helpers) => {
       <pre>
         <code>{data.partTwo}</code>
       </pre>
-    </>
+    </div>
   );
 };
