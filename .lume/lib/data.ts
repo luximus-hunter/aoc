@@ -29,8 +29,12 @@ for (const calendar of calendars) {
       const aocLink = `https://adventofcode.com/${calendar.year}/day/${day}`;
       const folderPath = [calendar.folderPath, name].join("/");
       const { partOne, partTwo } = getParts(folderPath);
-      const partOneLink = partOne ? `${repositoryUrl}/tree/main/${calendar.year}/${name}/part-1.ts` : undefined;
-      const partTwoLink = partTwo ? `${repositoryUrl}/tree/main/${calendar.year}/${name}/part-2.ts` : undefined;
+      const partOneLink = partOne
+        ? `${repositoryUrl}/tree/main/${calendar.year}/${name}/part-1.ts`
+        : undefined;
+      const partTwoLink = partTwo
+        ? `${repositoryUrl}/tree/main/${calendar.year}/${name}/part-2.ts`
+        : undefined;
 
       calendar.days.push({
         title,

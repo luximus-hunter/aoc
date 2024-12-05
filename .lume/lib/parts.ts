@@ -1,5 +1,5 @@
 export const getParts = (
-  dir: string
+  dir: string,
 ): { partOne: string | undefined; partTwo: string | undefined } => {
   const partOneFileName = `${dir}/part-1.ts`;
   const partTwoFileName = `${dir}/part-2.ts`;
@@ -11,7 +11,7 @@ export const getParts = (
     partOne = Deno.readTextFileSync(partOneFileName);
   } catch (_e) {
     console.error(
-      `Error reading file: ${partOneFileName}, using default content`
+      `Error reading file: ${partOneFileName}, using default content`,
     );
   }
 
@@ -19,7 +19,7 @@ export const getParts = (
     partTwo = Deno.readTextFileSync(partTwoFileName);
   } catch (_e) {
     console.error(
-      `Error reading file: ${partTwoFileName}, using default content`
+      `Error reading file: ${partTwoFileName}, using default content`,
     );
   }
 
