@@ -1,0 +1,24 @@
+name: Deno Format Check
+
+on:
+  pull_request:
+
+jobs:
+  format:
+    name: Run Deno fmt
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Deno 2.1
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v2.1
+
+      # Run deno fmt and check for changes
+      - name: Format Code
+        run: deno task format:check

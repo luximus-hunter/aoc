@@ -11,6 +11,10 @@
       "description": "Format all files",
       "command": "deno fmt"
     },
+    "format:check": {
+      "description": "Check if all files are formatted",
+      "command": "deno fmt --check"
+    },
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
     "build": "deno task lume",
     "dev": "deno task lume --watch -s"
