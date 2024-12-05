@@ -1,38 +1,23 @@
-// import { folderPaths } from "./lib/pages.ts";
-// import { getParts } from "./lib/parts.ts";
-
-// const rootDir = Deno.cwd();
-
-// export default function* () {
-//   for (const path of folderPaths) {
-//     yield {
-//       url: `./${path}/index.html`,
-//       title: path,
-//       content: `# ${path}`,
-//       ...getParts(rootDir + path),
-//     };
-//   }
-// }
-
 import { calendars } from "./lib/data.ts";
 
 export default function* () {
   for (const calendar of calendars) {
     for (const problem of calendar.days) {
+      if (problem.partOne === undefined && problem.partTwo === undefined) {
+        continue;
+      }
+
       yield {
-        url: `./${problem.folderPath}/index.html`,
-        title: problem.title,
+        url: `./${calendar.year}/${problem.day}/index.html`,
+        layout: "layouts/problem.tsx",
         content: `# ${problem.title}`,
+        title: problem.title,
+        aocLink: problem.aocLink,
         partOne: problem.partOne,
+        partOneLink: problem.partOneLink,
         partTwo: problem.partTwo,
+        partTwoLink: problem.partTwoLink,
       };
     }
-
-    yield {
-      url: `./${calendar.year}/index.html`,
-      title: calendar.year,
-      content: `# ${calendar.year}`,
-      days: calendar.days,
-    };
   }
 }

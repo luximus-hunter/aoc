@@ -16,7 +16,9 @@
     "dev": "deno task lume --watch -s"
   },
   "compilerOptions": {
-    "types": ["lume/types.ts"]
+    "types": ["lume/types.ts"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:preact"
   },
   "lint": {
     "exclude": ["./docs", "**/input.txt"],

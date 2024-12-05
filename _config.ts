@@ -1,7 +1,6 @@
 import lume from "lume/mod.ts";
-import codeHighlight from "lume/plugins/code_highlight.ts";
-import lang_typescript from "npm:highlight.js/lib/languages/typescript";
-import {calendars} from "./.lume/lib/data.ts";
+import jsx from "lume/plugins/jsx_preact.ts";
+import { calendars } from "./.lume/lib/data.ts";
 
 const site = lume({
   dest: "./docs",
@@ -9,13 +8,7 @@ const site = lume({
   src: "./.lume",
 });
 
-site.use(
-  codeHighlight({
-    languages: {
-      typescript: lang_typescript,
-    },
-  })
-);
+site.use(jsx());
 
 site.data("calendars", calendars);
 
