@@ -51,34 +51,34 @@ export default (data: Data, helpers: Lume.Helpers) => {
       </nav>
 
       <h2 class="text-4xl font-bold text-center mb-2">Solution for Part One</h2>
-      {hasPartOne ? (
-        <>
-          <h4 class="text-xl italic text-center mb-2 underline">
-            <a href={data.partOneLink}>
-              Part one on Github
-            </a>
-          </h4>
-          <div dangerouslySetInnerHTML={{ __html: data.partOne as string }} />
-        </>
-      ) : (
-        <p class="text-center">No solution provided yet.</p>
-      )}
+      {hasPartOne
+        ? (
+          <>
+            <h4 class="text-xl italic text-center mb-2 underline">
+              <a href={data.partOneLink}>
+                Part one on Github
+              </a>
+            </h4>
+            <div dangerouslySetInnerHTML={{ __html: data.partOne as string }} />
+          </>
+        )
+        : <p class="text-center">No solution provided yet.</p>}
 
       <h2 class="text-4xl font-bold text-center mt-12 mb-2">
         Solution for Part Two
       </h2>
-      {hasPartTwo ? (
-        <>
-          <h4 class="text-xl italic text-center mb-2 underline">
-            <a href={data.partTwoLink}>
-              Part two on Github
-            </a>
-          </h4>
-          <div dangerouslySetInnerHTML={{ __html: data.partTwo as string }} />
-        </>
-      ) : (
-        <p class="text-center">No solution provided yet.</p>
-      )}
+      {hasPartTwo
+        ? (
+          <>
+            <h4 class="text-xl italic text-center mb-2 underline">
+              <a href={data.partTwoLink}>
+                Part two on Github
+              </a>
+            </h4>
+            <div dangerouslySetInnerHTML={{ __html: data.partTwo as string }} />
+          </>
+        )
+        : <p class="text-center">No solution provided yet.</p>}
     </>
   );
 };

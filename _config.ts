@@ -22,7 +22,7 @@ site.use(
         },
       },
     },
-  })
+  }),
 );
 site.use(postcss());
 site.use(jsx());
