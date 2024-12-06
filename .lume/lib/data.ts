@@ -4,7 +4,7 @@ import { Calendar } from "./types.ts";
 
 const root = Deno.cwd();
 const yearRegex = /^\d{4}$/;
-const repositoryUrl = "https://github.com/" + Deno.env.get("GITHUB_REPO");
+const repositoryUrl = "https://github.com/" + Deno.env.get("REPO");
 
 const calendars: Calendar[] = [];
 for (const dir of Deno.readDirSync(root)) {
